@@ -1,0 +1,13 @@
+.test{
+    
+        background-color: cadetblue;
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://i.vimeocdn.com/video/643052362_1280x720.jpg?r=pad");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        background-origin: padding-box;
+        width: 100%;
+        height: 70vh;
+        
+        
+}

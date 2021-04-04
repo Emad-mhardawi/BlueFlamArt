@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Nav from "./Components/Nav/Nav";
+import {  Switch, Route, Link } from "react-router-dom";
+import Home from './Containers/Home/Home';
+import About from './Containers/About/About';
+import { useState } from "react";
+import SideDrawer from "./Components/Nav/SideDrawer/SideDrawer";
 
-function App() {
+const  App =()=> {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const sideBarToggle = ()=>{
+    setMenuOpen(!menuOpen)
+    console.log(menuOpen)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Nav menuOpen={menuOpen} toggle={sideBarToggle} />
+        {menuOpen && <SideDrawer/>}
+        
       </header>
+      <Route exact path='/' component={Home}/>
+      <Route path='/about' component={About}/>
     </div>
   );
 }

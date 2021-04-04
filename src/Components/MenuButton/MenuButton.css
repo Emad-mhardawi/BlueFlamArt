@@ -1,0 +1,53 @@
+.MenuButton {
+ 
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    margin-left: 10px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+ 
+  }
+  .MenuButton .MenuButton-line {
+    list-style: none;
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    transition: 0.5s;
+    background: black;
+    transform: translateY(-50%) rotate(0);
+    opacity: 1;
+  }
+  .MenuButton .MenuButton-line:nth-child(1) {
+    top: 20%;
+  }
+  .MenuButton .MenuButton-line:nth-child(2) {
+    top: 50%;
+  }
+  .MenuButton .MenuButton-line:nth-child(3) {
+    top: 80%;
+  }
+  
+  .MenuButton.active .MenuButton-line:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .MenuButton.active .MenuButton-line:nth-child(2) {
+    opacity: 0;
+  }
+  .MenuButton.active .MenuButton-line:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  @media only screen and (min-width: 769px) {
+    .MenuButton {
+      display: none;
+    }
+  }
+  

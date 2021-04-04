@@ -1,0 +1,9 @@
+.sideDrawer{
+    width: 75%;
+    height: 100vh;
+    background-color: cornflowerblue;
+    position: absolute;
+    left: 0;
+    
+    z-index: 1;
+}
