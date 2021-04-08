@@ -31,12 +31,12 @@
   }
   
   .nav-bottom-links__link:hover {
-    color: orangered;
+    color: #F26B9C;
     transition: 0.3s ease;
   }
   
   .nav-bottom-links__link.active {
-    color: orangered;
+    color: #F26B9C;
   }
   
   @media only screen and (max-width: 769px) {

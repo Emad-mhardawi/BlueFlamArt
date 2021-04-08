@@ -27,7 +27,7 @@
     height: 100%;
     top: 0;
     left: -20px;
-    color: orangered;
+    color: #F26B9C;
   }
   
   .nav-top__right-order {
@@ -35,14 +35,14 @@
   
     padding: 8px 20px;
     border: 2px solid rgba(165, 165, 165, 0.651);
-    color: orangered;
+    color: #F26B9C;
     font-weight: 700;
     cursor: pointer;
     user-select: none;
   }
   
   .nav-top__right-order:hover {
-    background-color: orangered;
+    background-color: #F26B9C;
     color: white;
     transition: 0.3s ease-in-out;
   }
@@ -65,7 +65,7 @@
     margin-right: 15px;
     cursor: pointer;
     font-size: 20px;
-    color: orangered;
+    color: #F26B9C;
     padding: 7px 10px;
     text-align: center;
     border: 2px solid rgba(165, 165, 165, 0.651);
@@ -74,7 +74,7 @@
   
   .nav-top__right-dropdown:hover {
     color: white;
-    background-color: orangered;
+    background-color: #F26B9C;
   }
   
   .nav-dropdown-list {
@@ -142,14 +142,14 @@
     .nav-top__right-order {
       font-size: 16px;
       padding: 3.5px 10px;
-      color: orangered;
+      color: #F26B9C;
       border: 1px solid rgba(165, 165, 165, 0.651);
     }
   
     .nav-top__right-dropdown {
       margin-right: 8px;
       font-size: 10px;
-      color: orangered;
+      color: #F26B9C;
       padding: 5.5px 7px;
       text-align: center;
       border: 1px solid rgba(165, 165, 165, 0.651);
@@ -185,14 +185,14 @@
     .nav-top__right-order {
       font-size: 10px;
       padding: 2px 8px;
-      color: orangered;
+      color: #F26B9C;
       border: 1px solid rgba(165, 165, 165, 0.651);
     }
   
     .nav-top__right-dropdown {
       margin-right: 8px;
       font-size: 10px;
-      color: orangered;
+      color: #F26B9C;
       padding: 3.5px 5px;
       text-align: center;
       border: 1px solid rgba(165, 165, 165, 0.651);
