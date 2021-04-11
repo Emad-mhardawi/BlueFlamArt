@@ -4,6 +4,7 @@ import Home from "./Containers/Home/Home";
 import About from "./Containers/About/About";
 import Login from "./Containers/Login/Login";
 import Layout from "./Components/Layout/Layout";
+import Signup from "./Containers/Signup/Signup";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/about" component={About} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Signup} />
         </Switch>
       </Layout>
     </div>

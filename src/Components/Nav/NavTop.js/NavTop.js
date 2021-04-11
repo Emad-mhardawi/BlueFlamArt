@@ -2,9 +2,22 @@ import React,{useState} from 'react';
 import {FaPhoneAlt, FaUser} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom';
 import './NavTop.css';
+import {useDispatch, useSelector} from 'react-redux';
+import {logout} from '../../../redux-store/actions/userActions';
+
 
 
 const NavTop = (props)=>{
+    
+const userLogin = useSelector((state)=>state.userLogin);
+const userInfo = userLogin;
+
+console.log(userInfo.userInfo)
+const dispatch = useDispatch()
+
+const logoutHandler = ()=>{
+    dispatch(logout())
+}
 
     const [authDropOpen, setAuthDropOpen] = useState(false)
     return(
@@ -23,11 +36,18 @@ const NavTop = (props)=>{
                 <FaUser />
                 {authDropOpen &&(
                 <ul className='nav-dropdown-list'>
+                    {userInfo.userInfo? <button onClick={logoutHandler}>logout</button>
+                    :
+                     <div>
                     <NavLink exact to='/login' className='nav-dropdown-link'> Login</NavLink>
-                    <NavLink to='/signup' className='nav-dropdown-link'> Signup</NavLink>
+                    <NavLink to='/register' className='nav-dropdown-link'> Signup</NavLink>
+                    </div>
+                    }
+                   
+                   
                     
-        
-        </ul>
+                    
+                </ul>
                ) }
                 
              </div>
