@@ -1,6 +1,5 @@
-import {AnimatePresence, motion, usePresence} from'framer-motion';
+import {motion} from'framer-motion';
 import {sideDrawerVariants, linksVariants } from '../../../framerAnimation/sideDrwaer';
-import { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import "./SideDrawer.css";
 

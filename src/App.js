@@ -1,30 +1,24 @@
 import "./App.css";
-import Nav from "./Components/Nav/Nav";
-import {  Switch, Route, Link } from "react-router-dom";
-import Home from './Containers/Home/Home';
-import About from './Containers/About/About';
-import { useState } from "react";
-import SideDrawer from "./Components/Nav/SideDrawer/SideDrawer";
+import { Switch, Route } from "react-router-dom";
+import Home from "./Containers/Home/Home";
+import About from "./Containers/About/About";
+import Login from "./Containers/Login/Login";
+import Layout from "./Components/Layout/Layout";
 
-const  App =()=> {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const sideBarToggle = ()=>{
-    setMenuOpen(!menuOpen)
-    console.log(menuOpen)
-  }
-
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Nav menuOpen={menuOpen} toggle={sideBarToggle} />
-        {menuOpen && <SideDrawer/>}
-        
-      </header>
-      <Route exact path='/' component={Home}/>
-      <Route path='/about' component={About}/>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/about" component={About} />
+          <Route path="/about" component={About} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </Layout>
     </div>
   );
-}
+};
 
 export default App;

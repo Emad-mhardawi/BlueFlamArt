@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {FaPhoneAlt, FaUser, FaFacebook, FaInstagramSquare, FaSnapchat} from 'react-icons/fa'
+import {FaPhoneAlt, FaUser} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom';
 import './NavTop.css';
 
