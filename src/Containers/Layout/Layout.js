@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {AnimatePresence} from'framer-motion';
-import Nav from '../Nav/Nav';
-import SideDrawer from '../Nav/SideDrawer/SideDrawer';
+import Nav from '../../Components/Nav/Nav';
+import SideDrawer from '../../Components/Nav/SideDrawer/SideDrawer';
 import './Layout.css';
 
 

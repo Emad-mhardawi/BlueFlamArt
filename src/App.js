@@ -2,11 +2,11 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import AdminProtectedRoute from './protectedRoutes/AdminRoute';
 import UserProtectedRoute from './protectedRoutes/UserProtectedRoute';
-import Home from "./Containers/Home/Home";
-import About from "./Containers/About/About";
-import Login from "./Containers/Login/Login";
-import Layout from "./Components/Layout/Layout";
-import Signup from "./Containers/Signup/Signup";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Login from "./pages/Login/Login";
+import Layout from "./Containers/Layout/Layout";
+import Signup from "./pages/Signup/Signup";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UserProfile from "./pages/UserProfile/UserProfile";
 

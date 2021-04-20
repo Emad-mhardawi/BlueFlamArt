@@ -1,4 +1,4 @@
-import './NavBotton.css';
+import './NavBottom.css';
 
 import { NavLink } from 'react-router-dom';
 import MenuButton from '../../MenuButton/MenuButton';

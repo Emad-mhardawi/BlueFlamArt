@@ -1,6 +1,6 @@
 import './Nav.css';
 import NavTop from './NavTop.js/NavTop';
-import NavBotton from './NavBotton/NavBotton';
+import NavBotton from '../Nav/NavBottom/NavBottom';
 
 const Nav = (props)=>{
     return(

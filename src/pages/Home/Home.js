@@ -1,4 +1,4 @@
-import HeroHeader from '../HeroHeader/HeroHeader';
+import HeroHeader from '../../Containers/HeroHeader/HeroHeader';
 import './Home.css';
 
 
