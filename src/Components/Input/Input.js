@@ -1,18 +1,18 @@
 import './Input.css';
+import {forwardRef} from 'react';
 
-
-const Input = (props)=>{
+const Input = forwardRef((props, ref)=>{
 let inputElement = null;
 
 switch (props.inputtype) {
     case 'text':
-        inputElement= <input  {...props}  className= {`inputElement  ${props.className}`}   />
+        inputElement= <input ref={ref}  {...props}  className= {`inputElement  ${props.className}`}   />
         break;
     case 'textarea':
-            inputElement= <textarea {...props} className= {'inputElement ' +  props.className} />
+            inputElement= <textarea ref={ref} {...props} className= {'inputElement ' +  props.className} />
             break;
 
-    default: inputElement= <input {...props} className='inputElement' />
+    default: inputElement= <input ref={ref} {...props} className='inputElement' />
         break;
 }
 
@@ -25,7 +25,7 @@ switch (props.inputtype) {
          <p className='error-message' >{props.errormessage}</p>
         </div>
     )
-}
+})
 
 
 export default Input;

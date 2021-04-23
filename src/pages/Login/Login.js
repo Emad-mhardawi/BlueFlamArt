@@ -2,13 +2,23 @@ import React, { useEffect, useState } from "react";
 import Input from "../../Components/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux-store/actions/userActions";
+import {useForm} from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import validationSchema from '../../utils/validate';
 
 import "./Login.css";
 import { Redirect } from "react-router";
 
 const Login = ({history}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  // functions that come with react form hook
+  // to handle input fields and form submission 
+  const {register, handleSubmit, formState: { errors } } = useForm({
+    mode:'onBlur',
+    resolver:yupResolver(validationSchema)
+  });
+  
+ 
 
   const dispatch = useDispatch();
  
@@ -26,35 +36,34 @@ const Login = ({history}) => {
   },[history, userInfo])
   
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(`email: ${email}  password: ${password}`);
-    dispatch(login(email, password));
+  const submit = (data) => {
+    dispatch(login(data.email, data.password));
   };
 
+  console.log(errors)
 
   return (
     <div className="login">
-      <form className="login-form" onSubmit={submitHandler}>
+      <form className="login-form" onSubmit={handleSubmit(submit)}>
         {loading ? <h1>loading</h1> : null}
         <h3 className="form-title"> Login to your account</h3>
         <Input
           inputtype="text"
           type="email"
           name="email"
-          value={email}
           label="Email"
           placeholder="Enter your email"
-          onChange={(e) => setEmail(e.target.value)}
+          {...register('email')}
+          
         />
         <Input
           inputtype="text"
           type="password"
           name="password"
-          value={password}
           label="password"
           placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
+          {...register('password')}
+          
         />
         <p className="forgot-password">forgot my password</p>
         <button type="submit" className="loggin-button">
