@@ -1,109 +1,98 @@
-import { useState } from 'react';
-import Input from '../../Components/Input/Input';
+import { useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
+import Input from "../../Components/Input/Input";
 import "./Signup.css";
-import {useDispatch, useSelector} from 'react-redux';
-import {register} from '../../redux-store/actions/userActions';
-import validate from '../../utils/validate';
+import { useDispatch, useSelector } from "react-redux";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import validationSchema from "../../utils/validate";
+
+import { registerUser } from "../../redux-store/actions/userActions";
+import Form from "../../Components/Form/Form";
+import Button from "../../Components/Button/Button";
 
 const Signup = () => {
 
-    const dispatch = useDispatch()
-    const [errors, setErrors]= useState({});
+  /// bring register request result from redux store
+  const dispatch = useDispatch();
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, error, userInfo } = userRegister;
 
-    const [inputs, setInputs ] = useState({
-        username:'',
-        email:'',
-        password:'',
-        confirmedPassword:''
-    })
+  // functions that come with react form hook
+  // to handle input fields and form submission
+  const {register,handleSubmit,formState: { errors }} = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(validationSchema),
+  });
 
-    const changeHandler = (e)=>{
-        const value= e.target.value;
-        setInputs({
-            ...inputs,
-            [e.target.name]: value
-        })
-        
-    }
+  /// when form is submitted inputs values will be sent
+  /// to redux and dispatch an action to handle the login request.
+  const submit = (data) => {
+    dispatch(registerUser(data.username, data.email, data.password, data.confirmedPassword));
+  };
 
-    const submitHandler = (e)=>{
-        e.preventDefault()
-        setErrors(validate(inputs))
-          dispatch(register(inputs.username, inputs.email , inputs.password, inputs.confirmedPassword));
-        
-        
-        
-        
-        
-    }
-
-   
-console.log(errors)
-   
-
+  
   return (
     <div className="signup">
-       <form className="login-form" onSubmit={submitHandler}>
-        
+      <Form className="login-form" onSubmit={handleSubmit(submit)}>
+        {loading ? <h1>loading</h1> : null}
+        {error && <h3 className="error-message">{error}</h3>} 
         <h3 className="form-title"> Create new account</h3>
         <Input
           inputtype="text"
           type="text"
           name="username"
-          value={inputs.username}
           label="Username"
           placeholder="Choose your username"
-          onChange ={changeHandler}
-  
+          {...register("username")}
+          errormessage={errors.username?.message}
+          className={errors.username && "error"}
         />
+
         <Input
-          className ={errors.emailError && 'error'}
-          errormessage ={errors.emailError}
+          className={errors.emailError && "error"}
           inputtype="text"
           type="email"
           name="email"
-          value={inputs.email}
           label="Email"
           placeholder="Email"
-          
-          onChange ={changeHandler}
+          {...register("email")}
+          errormessage={errors.email?.message}
+          className={errors.email && "error"}
         />
+
         <Input
-          className ={errors.passwordError && 'error'}
-          errormessage ={errors.passwordError}
           inputtype="text"
           type="password"
           name="password"
-          value={inputs.password}
           label="password"
           placeholder="password"
-          onChange ={changeHandler}
-          
+          {...register("password")}
+          errormessage={errors.password?.message}
+          className={errors.password && "error"}
         />
-        
+
         <Input
-          className ={errors.confirmedPasswordError && 'error'}
-          errormessage ={errors.confirmedPasswordError }
           inputtype="text"
           type="password"
           name="confirmedPassword"
-          value={inputs.confirmedPassword}
           label="confirm password"
           placeholder=" Confirm your password"
-          onChange ={changeHandler}
-          
+          {...register("confirmedPassword")}
+          errormessage={errors.confirmedPassword?.message}
+          className={errors.confirmedPassword && "error"}
         />
         
-        <button type="submit" className="loggin-button">
-          Register
-        </button>
+        <Button type="submit" className="login-button">Register</Button>
+        
         <hr className="form-divider" />
+
         <div className="create-acount-link">
           <p>
-            Allready have an account? <a href="/home">Login</a>
+            Already have an account? <a href="/home">Login</a>
           </p>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };
