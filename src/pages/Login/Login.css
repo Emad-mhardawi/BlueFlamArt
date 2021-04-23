@@ -1,85 +1,67 @@
-.login{
-  height: 100%;
-    background-image: url('../../assets/images/—Pngtree—simple\ square\ brush\ stroke\ irregular_4124476.png');
-    background-size: 1050px;
-  
-    
-    background-position-x:50%;
-    background-position-y:-90px;
-    background-repeat: no-repeat;
-    background-color: #f9f9f9;
+.login-form {
+  width: 500px;
+  margin: 100px auto;
 }
 
-.login-form{
-    width: 500px;
-    
-    margin: 100px auto;
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.05),0 3px 4px 0 rgba(0,0,0,0.03),0 2px 4px 0 rgba(0,0,0,0.03);
-    padding: 60px;
-
-    border-radius: 10px;
-    background-color: white;
-
-    }
-
-    .form-title{
-        font-family:  sans-serif;
-        font-size: 50px;
-        margin-bottom: 15px;
-       
-    }
-
-    .forgot-password{
-        display: block;
-        font-size: 20px;
-        color: #F26B9C;
-    }
-
-    .loggin-button{
-        display: block;
-        width: 229px;
-        margin: 25px 0px;
-        padding: 13px 24px;
-        text-align: center;
-        font-size: 25px;
-        border: none;
-        border-radius: 10px;
-        background-color: #F26B9C;
-        outline: none;
-        cursor: pointer;
-        color: white;
+.form-title {
+  font-family: sans-serif;
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
-.form-divider{
+.forgot-password {
+  display: block;
+  font-size: 20px;
+  color: #f26b9c;
+}
+
+button.login-button {
+  display: block;
+  width: 229px;
+  margin: 25px 0px;
+  padding: 13px 24px;
+  text-align: center;
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f26b9c;
+  outline: none;
+  cursor: pointer;
+  color: white;
+}
+
+.form-divider {
+  width: 100%;
+  margin: 20px auto;
+  border-top: 1px solid #b8b3b3ed;
+}
+
+.error-message {
+  font-family: roboto;
+  background-color: rgba(255, 0, 0, 0.26);
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (max-width: 625px) {
+  .login {
+    background-image: none;
+  }
+  .login-form {
+    width: 90%;
+    margin: 15px auto;
+    padding: 25px 25px;
+  }
+  .form-title {
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  button.login-button {
+    display: block;
     width: 100%;
-    margin: 20px auto;
-    border-top: 1px solid #b8b3b3ed;
-
-}
-
-
-
-@media only screen and (max-width:625px){
-    .login{
-        background-image: none;
-    }
-    .login-form{
-        width: 90%;
-        margin: 15px auto;
-        padding: 25px 25px;
-    }
-
-    .form-title{
-        font-family:  sans-serif;
-        font-size: 25px;
-        margin-bottom: 15px;
-    }
-
-    .loggin-button{
-        display: block;
-        width: 100%;
-        margin: 25px auto;
-        padding: 9px 12px;
-       
-}
+    margin: 25px auto;
+    padding: 9px 12px;
+  }
 }

@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
 import Input from "../../Components/Input/Input";
+import Form from "../../Components/Form/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux-store/actions/userActions";
 import {useForm} from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema from '../../utils/validate';
-
 import "./Login.css";
-import { Redirect } from "react-router";
+import { useHistory } from "react-router";
+import Button from "../../Components/Button/Button";
+import { useEffect } from "react";
 
-const Login = ({history}) => {
+
+const Login = () => {
+
+  /// bring login request result from redux store
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
 
   // functions that come with react form hook
   // to handle input fields and form submission 
@@ -18,34 +25,24 @@ const Login = ({history}) => {
     resolver:yupResolver(validationSchema)
   });
   
- 
-
-  const dispatch = useDispatch();
- 
-  const userLogin = useSelector((state) => state.userLogin);
-
-  const { loading, error, userInfo } = userLogin;
-
-
-  /// redirect the user to home page when the user logged in 
-  
-  useEffect(()=>{
-    if(userInfo){
-      history.push('/')
-    }
-  },[history, userInfo])
-  
-
+  /// when form is submitted inputs values will be sent
+  /// to a redux and dispatch an action to handle the login request
   const submit = (data) => {
     dispatch(login(data.email, data.password));
   };
-
-  console.log(errors)
+  
+  /// if login request succeed and user info
+  // stored in redux store redirect user to home page
+  const history = useHistory();
+  useEffect(()=>{
+    userInfo && history.push('/')
+  },[userInfo])
 
   return (
     <div className="login">
-      <form className="login-form" onSubmit={handleSubmit(submit)}>
+      <Form className="login-form" onSubmit={handleSubmit(submit)}>
         {loading ? <h1>loading</h1> : null}
+        {error && <h3 className="error-message">{error}</h3>}
         <h3 className="form-title"> Login to your account</h3>
         <Input
           inputtype="text"
@@ -53,8 +50,9 @@ const Login = ({history}) => {
           name="email"
           label="Email"
           placeholder="Enter your email"
-          {...register('email')}
-          
+          {...register("email")}
+          errormessage={errors.email?.message}
+          className={errors.email && "error"}
         />
         <Input
           inputtype="text"
@@ -62,20 +60,21 @@ const Login = ({history}) => {
           name="password"
           label="password"
           placeholder="password"
-          {...register('password')}
-          
+          {...register("password")}
+          errormessage={errors.password?.message}
+          className={errors.password && "error"}
         />
         <p className="forgot-password">forgot my password</p>
-        <button type="submit" className="loggin-button">
+        <Button type="submit" className="login-button">
           LOGIN
-        </button>
+        </Button>
         <hr className="form-divider" />
         <div className="create-acount-link">
           <p>
             Don' have an account? <a href="/home"> Create an account</a>
           </p>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };

@@ -22,7 +22,7 @@ switch (props.inputtype) {
         <div className='input-wraper'>
          <label className='label' >{props.label}</label>
          {inputElement}
-         <p className='error-message' >{props.errormessage}</p>
+         <p className='input-error' >{props.errormessage}</p>
         </div>
     )
 })
