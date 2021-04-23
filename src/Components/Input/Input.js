@@ -6,13 +6,13 @@ let inputElement = null;
 
 switch (props.inputtype) {
     case 'text':
-        inputElement= <input className= {`inputElement  ${props.className}`}  {...props} />
+        inputElement= <input  {...props}  className= {`inputElement  ${props.className}`}   />
         break;
     case 'textarea':
-            inputElement= <textarea  className= {'inputElement ' +  props.className}  {...props}  />
+            inputElement= <textarea {...props} className= {'inputElement ' +  props.className} />
             break;
 
-    default: inputElement= <input className='inputElement' {...props} />
+    default: inputElement= <input {...props} className='inputElement' />
         break;
 }
 
@@ -22,6 +22,7 @@ switch (props.inputtype) {
         <div className='input-wraper'>
          <label className='label' >{props.label}</label>
          {inputElement}
+         <p className='error-message' >{props.errormessage}</p>
         </div>
     )
 }

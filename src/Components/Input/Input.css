@@ -28,3 +28,13 @@
     outline: none;
     background-color: rgb(163, 163, 163);
 }
+
+.error{
+    background-color: rgba(255, 0, 0, 0.157);
+}
+
+
+
+.error-message{
+    color: red;
+}
