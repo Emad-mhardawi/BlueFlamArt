@@ -1,0 +1,42 @@
+.order-step-1{
+max-width: 1200px;
+width: 100%;
+margin: 20px auto;
+font-family: roboto;
+}
+
+.form.order-step-1__form{
+    padding: 30px;
+    box-shadow: none;
+}
+
+.artStyles-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 20vh);
+    gap: 25px;
+}
+
+.question{
+    padding: 15px 0px;
+    margin-top: 20px;
+}
+
+.next-button{
+    background-color: transparent;
+    border: 1px solid #F26B9C;
+    color: gray;
+    width: 120px;
+    border-radius: 0px;
+    padding: 8px 0px;
+ 
+}
+
+
+
+@media only screen and (max-width:720px) {
+    .artStyles-container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 15vh);
+    }
+}

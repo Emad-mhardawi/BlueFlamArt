@@ -1,0 +1,71 @@
+/* HIDE RADIO */
+.radio-button { 
+    position: absolute;
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+  
+/* IMAGE STYLES */
+.radio-button + img {
+  cursor: pointer;
+}
+
+.radio-button-image{
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+
+}
+
+/* CHECKED STYLES */
+.radio-button:checked + .radio-button-image {
+  outline: 4px solid #F26B9C;
+}
+
+.radio-label{
+  position: relative;
+  cursor: pointer;
+  }
+  
+
+.portrait-details{
+background-color: rgba(0, 0, 0, 0.205);
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+
+}
+
+
+.portrait-style{
+font-family:    roboto;
+font-weight: bold;
+color: white;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+text-align: center;
+padding: 5px;
+
+}
+
+.portrait-price{
+  text-align: center;
+  color: white;
+  padding: 10px;
+  background-color: #f26b9cea;
+  width: 25%;
+}
+
+
+@media only screen and (max-width:500px) {
+  .portrait-price{
+    width: 30%;
+    font-size: 10px;
+  }}

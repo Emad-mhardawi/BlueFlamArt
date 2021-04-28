@@ -32,7 +32,7 @@
   
   .nav-top__right-order {
     font-size: 25px;
-  
+    text-decoration: none;
     padding: 8px 20px;
     border: 2px solid rgba(165, 165, 165, 0.651);
     color: #F26B9C;

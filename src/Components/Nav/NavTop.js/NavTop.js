@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {FaPhoneAlt, FaUser} from 'react-icons/fa'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './NavTop.css';
 import {useDispatch, useSelector} from 'react-redux';
 import {logout} from '../../../redux-store/actions/userActions';
@@ -53,7 +53,7 @@ const logoutHandler = ()=>{
              </div>
 
 
-            <p className='nav-top__right-order'>order now</p>
+            <Link to='/order' className='nav-top__right-order'>order now</Link>
 
             
         </div>

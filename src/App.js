@@ -9,6 +9,7 @@ import Layout from "./Containers/Layout/Layout";
 import Signup from "./pages/Signup/Signup";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UserProfile from "./pages/UserProfile/UserProfile";
+import Order from "./pages/Order/order";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Signup} />
           
+          <UserProtectedRoute path='/order' component={Order}/>
           <UserProtectedRoute path='/profile' component={UserProfile}/>
           <AdminProtectedRoute path='/admin/dashboard' component={Dashboard}/>
         </Switch>
