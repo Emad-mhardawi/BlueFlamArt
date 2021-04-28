@@ -1,13 +1,15 @@
-.order-step-1{
+.order-step-1,
+.order-step-2{
 max-width: 1200px;
 width: 100%;
 margin: 20px auto;
 font-family: roboto;
 }
 
-.form.order-step-1__form{
+.form.order-step-1__form,
+.form.order-step-2__form{
     padding: 30px;
-    box-shadow: none;
+    padding: 30px 100px;
 }
 
 .artStyles-container{
@@ -20,9 +22,11 @@ font-family: roboto;
 .question{
     padding: 15px 0px;
     margin-top: 20px;
+    font-family: roboto;
 }
 
-.next-button{
+.next-button,
+.prev-button{
     background-color: transparent;
     border: 1px solid #F26B9C;
     color: gray;
@@ -32,6 +36,20 @@ font-family: roboto;
  
 }
 
+.full-body,
+.portrait-size{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px ;
+}
+
+@media only screen and (max-width:1200px) {
+    .form.order-step-1__form,
+    .form.order-step-2__form{
+        box-shadow: none;
+    }
+    
+}
 
 
 @media only screen and (max-width:720px) {
@@ -39,4 +57,10 @@ font-family: roboto;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 15vh);
     }
+    .form.order-step-1__form,
+    .form.order-step-2__form{
+        padding: 30px ;
+        box-shadow: none;
+    }
+    
 }

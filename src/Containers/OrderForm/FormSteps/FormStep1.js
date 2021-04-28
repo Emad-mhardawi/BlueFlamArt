@@ -10,7 +10,7 @@ import "../OrderForm.css";
 
 
 
-const OrderForm = () => {
+const FormStep1 = () => {
 const [portraits, setPortraits] = useState({
     loading: true,
     portraits:[]
@@ -55,11 +55,10 @@ const [portraits, setPortraits] = useState({
                     />
                     ))}
               </div>
-              <Button
-                clicked={nextStep} type='button' className='next-button'> Next</Button>
+              <Button clicked={nextStep} type='button' className='next-button'> Next</Button>
         </Form>
     </div>
   );
 };
 
-export default OrderForm;
+export default FormStep1;
