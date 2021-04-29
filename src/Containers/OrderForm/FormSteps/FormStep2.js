@@ -22,7 +22,7 @@ const {register, handleSubmit, formState: { errors } } = useForm({
 
 
 const nextStep = ()=>{
-    history.push('/order/step2')
+    history.push('/order/step3')
 }
 const prevStep = ()=>{
     history.push('/order')
@@ -32,7 +32,7 @@ const history = useHistory()
 /// submit form
 const submit = (data)=>{
     console.log(data)
-    history.push('/order/step2')
+    history.push('/order/step3')
 }
 
     
@@ -118,7 +118,7 @@ const submit = (data)=>{
 
         <div>
             <Button clicked={prevStep} type='button' className='next-button'> previous</Button>
-            <Button clicked={nextStep} type='summit' className='prev-button'> Next</Button> 
+            <Button type='summit' className='prev-button'> Next</Button> 
          </div>  
         </Form>
     </div>
