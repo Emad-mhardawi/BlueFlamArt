@@ -1,9 +1,10 @@
-import './RadioInput.css'
+import './RadioInput.css';
+import {forwardRef} from 'react';
 
-const RadioInput = (props)=>{
+const RadioInput = forwardRef((props, ref)=>{
 return (
   <label className={`radio-label ${props.className}`} >
-      <input {...props} className={`radio-button ${props.className}`} type='radio' name='test'/>
+      <input {...props} ref={ref} className={`radio-button ${props.className}`} type='radio'/>
       <img className='radio-button-image' src={props.image}/>
       <div className='portrait-details'>
         <p className='portrait-price'>{props.price}</p>
@@ -12,6 +13,6 @@ return (
       
   </label>
 )
-}
+})
 
 export default RadioInput;

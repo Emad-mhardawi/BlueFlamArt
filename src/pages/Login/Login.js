@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux-store/actions/userActions";
 import {useForm} from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import validationSchema from '../../utils/validate';
+import {authInputsValidation} from '../../utils/validate';
 import "./Login.css";
 import { useHistory } from "react-router";
 import Button from "../../Components/Button/Button";
@@ -22,7 +22,7 @@ const Login = () => {
   // to handle input fields and form submission 
   const {register, handleSubmit, formState: { errors } } = useForm({
     mode:'onBlur',
-    resolver:yupResolver(validationSchema)
+    resolver:yupResolver(authInputsValidation)
   });
   
   /// when form is submitted inputs values will be sent
