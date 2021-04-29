@@ -4,11 +4,13 @@ height: 100%;
 margin-top: 25px;
 display: flex;
 flex-direction: column;
+
 }
 
 .image-upload{
-    width: 500px;
+    max-width: 500px;
     height: 500px;
+    
    margin: 0 auto;
   
     background-position: center;

@@ -36,7 +36,7 @@ const Login = () => {
   const history = useHistory();
   useEffect(()=>{
     userInfo && history.push('/')
-  },[userInfo])
+  },[userInfo, history])
 
   return (
     <div className="login">

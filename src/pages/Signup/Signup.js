@@ -1,12 +1,9 @@
-import { useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
 import Input from "../../Components/Input/Input";
 import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {authInputsValidation} from "../../utils/validate";
-
 import { registerUser } from "../../redux-store/actions/userActions";
 import Form from "../../Components/Form/Form";
 import Button from "../../Components/Button/Button";
@@ -16,7 +13,7 @@ const Signup = () => {
   /// bring register request result from redux store
   const dispatch = useDispatch();
   const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
+  const { loading, error } = userRegister;
 
   // functions that come with react form hook
   // to handle input fields and form submission
@@ -58,7 +55,7 @@ const Signup = () => {
           placeholder="Email"
           {...register("email")}
           errormessage={errors.email?.message}
-          className={errors.email && "error"}
+          
         />
 
         <Input

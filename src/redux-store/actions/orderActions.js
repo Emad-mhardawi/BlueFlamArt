@@ -1,5 +1,5 @@
-import {USER_LOGIN_FAIL, ORDER_COLLECT_DATA } from "./actionsTypes";
-  import axios from "axios";
+import { ORDER_COLLECT_DATA } from "./actionsTypes";
+
   
 
   export const collectFormData = (data) => (dispatch) => {

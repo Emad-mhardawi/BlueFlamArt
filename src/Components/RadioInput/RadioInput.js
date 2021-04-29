@@ -5,7 +5,7 @@ const RadioInput = forwardRef((props, ref)=>{
 return (
   <label className={`radio-label ${props.className}`} >
       <input {...props} ref={ref} className={`radio-button ${props.className}`} type='radio'/>
-      <img className='radio-button-image' src={props.image}/>
+      <img className='radio-button-image' alt='radio-button' src={props.image}/>
       <div className='portrait-details'>
         <p className='portrait-price'>{props.price}</p>
         <h3 className='portrait-style'>{props.value}</h3>

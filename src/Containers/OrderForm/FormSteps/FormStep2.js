@@ -5,25 +5,27 @@ import Input from "../../../Components/Input/Input";
 import {useForm} from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {step2Validation} from '../../../utils/validate';
+import { useDispatch, useSelector } from "react-redux";
+import {collectFormData} from '../../../redux-store/actions/orderActions';
 import "../OrderForm.css";
 
 
 
 const FormStep2 = () => {
 
+    const dispatch = useDispatch();
+    const orderData = useSelector((state) => state.collectOrderData);
+    const { fullBody, portraitSize, commentToArtist} = orderData;
 
-
+    console.log(fullBody)
 /// handling form validation and submission 
 const {register, handleSubmit, formState: { errors } } = useForm({
     mode:'onBlur',
-    resolver:yupResolver(step2Validation)
+    defaultValues: {fullBody:fullBody, portraitSize:portraitSize, commentToArtist:commentToArtist },
+    resolver:yupResolver(step2Validation),
 });
 
 
-
-const nextStep = ()=>{
-    history.push('/order/step3')
-}
 const prevStep = ()=>{
     history.push('/order')
 }
@@ -32,6 +34,7 @@ const history = useHistory()
 /// submit form
 const submit = (data)=>{
     console.log(data)
+    dispatch(collectFormData(data));
     history.push('/order/step3')
 }
 
@@ -45,7 +48,7 @@ const submit = (data)=>{
             <div>
                 <input
                 name='fullBody'
-                value={true}
+                value= {true}
                 type= 'radio'
                 {...register('fullBody')}
                 />

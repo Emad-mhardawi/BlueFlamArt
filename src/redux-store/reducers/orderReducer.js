@@ -2,13 +2,12 @@ import * as actionTypes from '../actions/actionsTypes';
 
 
 const initialState = {
-    id:'',
     portraitName:'',
     portraitStyle:'',
-    fullBody:false,
+    fullBody:null,
     portraitSize:'',
     image:'',
-    comment:'no comment',
+    commentToArtist:'',
 
 }
 
