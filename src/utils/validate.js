@@ -17,3 +17,9 @@ export const step1Validation = yup.object().shape({
     portraitStyle: yup.string().nullable().required(),
 })
 
+
+/// validate order multiSteps form step 2
+export const step2Validation = yup.object().shape({
+    fullBody: yup.boolean().nullable().required(),
+    portraitSize: yup.string().nullable().required(),
+})
