@@ -27,7 +27,7 @@ const {handleSubmit, formState: { errors } } = useForm({
 
 const history = useHistory();
 const submit = (data)=>{
-    history.push('/order/checkout')
+    history.push('/order/overview')
 }
 
 const prevStep = ()=>{

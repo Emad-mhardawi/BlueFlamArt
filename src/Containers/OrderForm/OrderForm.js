@@ -21,6 +21,7 @@ const OrderForm = ()=>{
             <Route exact  path='/order' component={FormStep1}/>
             <Route exact  path='/order/step2' component={FormStep2}/>
             <Route exact  path='/order/step3' component={FormStep3}/>
+            <Route exact  path='/order/overview' component={OverView}/>
             </Switch>
     
       </div>
@@ -33,4 +34,3 @@ const OrderForm = ()=>{
 export default OrderForm;
 
 
-/* <Route exact  path='/order/overview' component={OverView}/>*/

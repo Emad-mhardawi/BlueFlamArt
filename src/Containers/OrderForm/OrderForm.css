@@ -26,7 +26,8 @@ font-family: roboto;
 }
 
 .next-button,
-.prev-button{
+.prev-button,
+.checkout-button{
     background-color: transparent;
     border: 1px solid #F26B9C;
     color: gray;
