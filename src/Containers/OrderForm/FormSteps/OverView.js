@@ -48,6 +48,7 @@ return(
     <h3>commentToArtist:  {commentToArtist}</h3>
     <Button clicked ={checkout} className ='checkout-button'>check out</Button>
    
+   
     </div>
 )
 }

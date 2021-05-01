@@ -10,6 +10,7 @@ import Signup from "./pages/Signup/Signup";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import Order from "./pages/Order/order";
+import OurWork from "./pages/ourWork/OurWork";
 
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/about" component={About} />
-          <Route path="/about" component={About} />
+          <Route path="/gallery" component={OurWork} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Signup} />
           

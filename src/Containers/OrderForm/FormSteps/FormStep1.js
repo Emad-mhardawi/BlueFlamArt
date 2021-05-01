@@ -39,7 +39,7 @@ useEffect(()=>{
 
 /// fetch portraits from server and save them in state
 const getPortraits = async ()=>{
-    const response = await axios.get('http://localhost:4000/portraits');
+    const response = await axios.get('http://localhost:5000/portraits');
     const portraits = await response.data;
     setPortraits({
         loading: false,
