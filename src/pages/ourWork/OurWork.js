@@ -1,82 +1,52 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Spinner from '../../Components/Spinner/Spinner'
 import './OurWork.css';
 
 const OurWork = ()=>{
+
+    const [previousWork, setPreviousWork] = useState([]);
+    const [loading , setLoading] = useState(true);
+
+
+
+    useEffect(()=>{
+        getPreviousWork()
+    },[])
+
+    const getPreviousWork = async ()=>{
+        const response = await axios.get('http://localhost:5000/previous-work')
+        const previousWork = await response.data
+        setPreviousWork(previousWork)
+        setLoading(false)
+    }
+
+    
     return(
         <div>
             <h3 className='gallery-title'> Some of our work</h3>
             <div className ='gallery-grid-container'>
-            
-            <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
+            {loading && <Spinner/>}
+            {previousWork.map((item)=>(
+                <div key={item._id} className='gallery-grid__image-box'>
+                <div className='gallery-item'>
+                <div className='gallery-grid__image-box'>
+                    <img className='gallery-grid__image' src={item.imageUrl}/>
+                 </div>
+                <div className='gallery-grid__image-overlay'>
+                    <p className='gallery-grid__image-madeBy'>made by: {item.madeBy}</p>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
+            ))}
 
-        <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
-            </div>
-            </div>
-        </div>
 
-        <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
-            </div>
-            </div>
-        </div>
-
-        <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
-            </div>
-            </div>
-        </div>
-
-        <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
-            </div>
-            </div>
-        </div>
-        
-    
                 
 
 
 
                
-        <div className='gallery-grid__image-box'>
-            <div className='gallery-item'>
-            <div className='gallery-grid__image-box'>
-                <img className='gallery-grid__image' src='https://lasvegasappliancerepairexpert.com/wp-content/uploads/2021/03/photo-1503023345310-bd7c1de61c7d.jpg'/>
-             </div>
-            <div className='gallery-grid__image-overlay'>
-                <p className='gallery-grid__image-madeBy'>made by: Emad</p>
-            </div>
-            </div>
-        </div>
+        
                 
                 
 
