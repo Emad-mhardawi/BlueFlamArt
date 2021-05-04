@@ -1,32 +1,52 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import SelectMenu from '../../Components/SelectMenu/SelectMenu';
 import Spinner from '../../Components/Spinner/Spinner'
 import './OurWork.css';
 
 const OurWork = ()=>{
 
     const [previousWork, setPreviousWork] = useState([]);
+    const [pageNumber , setPageNumber] = useState(0);
+    const [totalPages , setTotalPages] = useState(0)
     const [loading , setLoading] = useState(true);
+    const [category, setCategory] =useState('')
 
+
+    const pages = new Array(totalPages).fill(null)
 
 
     useEffect(()=>{
         getPreviousWork()
-    },[])
+    },[pageNumber, category])
 
     const getPreviousWork = async ()=>{
-        const response = await axios.get('http://localhost:5000/previous-work')
-        const previousWork = await response.data
-        setPreviousWork(previousWork)
+        setLoading(true)
+        const response = await axios.get(`http://localhost:5000/previous-work?page=${pageNumber}&category=${category}`)
+        const previousWork = await response.data;
+        
+        setPreviousWork(previousWork.previousWork)
+        setTotalPages(previousWork.totalPages)
         setLoading(false)
     }
 
+    console.log(previousWork)
+    
+    
+   
+
+    console.log(pageNumber)
     
     return(
-        <div>
+        <div className=''>
             <h3 className='gallery-title'> Some of our work</h3>
+            
+<div className='select-menu-container'>
+    <SelectMenu setCategory={setCategory}  category={category}/>
+</div>
+            
             <div className ='gallery-grid-container'>
-            {loading && <Spinner/>}
+                {loading && <Spinner/>}
             {previousWork.map((item)=>(
                 <div key={item._id} className='gallery-grid__image-box'>
                 <div className='gallery-item'>
@@ -41,18 +61,20 @@ const OurWork = ()=>{
             ))}
 
 
-                
-
-
-
-               
-        
-                
-                
-
+           
             </div>
+ <div className='pagination'>
+            {pages.map((page, pageIndex)=>(
+               
+        <button key={pageIndex} className='pagination-button' onClick={()=>setPageNumber(pageIndex)}>{pageIndex +1}</button>
+              
+                
+            ))} 
+             </div>
         </div>
     )
 }
 
 export default OurWork
+
+

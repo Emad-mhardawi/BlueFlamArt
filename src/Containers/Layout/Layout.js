@@ -3,6 +3,7 @@ import {AnimatePresence} from'framer-motion';
 import Nav from '../../Components/Nav/Nav';
 import SideDrawer from '../../Components/Nav/SideDrawer/SideDrawer';
 import './Layout.css';
+import Backdrop from '../../Components/Backdrop/Backdrop';
 
 
 const Layout = (props)=>{
@@ -18,6 +19,7 @@ const Layout = (props)=>{
             <AnimatePresence>
             {menuOpen && <SideDrawer closeMenu={sideBarToggle} />  }
             </AnimatePresence>
+            {menuOpen && <Backdrop closeMenu={sideBarToggle} />  }
             {props.children}
           
         </React.Fragment>

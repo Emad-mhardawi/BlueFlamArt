@@ -1,0 +1,43 @@
+
+.custom-select select{
+font-size: 16px;
+padding: 10px 35px 10px 10px;
+box-shadow: 0 10px 8px rgba(0, 0, 0, 0.274);
+color: gray;
+border: none;
+width: 100%;
+outline: none;
+cursor: pointer;
+
+}
+
+.custom-select{
+    position: relative;
+    background-color: blue;
+    width: 225px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    
+    
+}
+.custom-arrow{
+    background-color: #F26B9C;
+    display: block;
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+   
+}
+
+.arrow-icon{
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+   
+}
