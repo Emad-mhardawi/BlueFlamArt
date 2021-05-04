@@ -24,29 +24,20 @@ const OurWork = ()=>{
         setLoading(true)
         const response = await axios.get(`http://localhost:5000/previous-work?page=${pageNumber}&category=${category}`)
         const previousWork = await response.data;
-        
         setPreviousWork(previousWork.previousWork)
         setTotalPages(previousWork.totalPages)
         setLoading(false)
     }
 
-    console.log(previousWork)
-    
-    
-   
-
-    console.log(pageNumber)
-    
     return(
-        <div className=''>
-            <h3 className='gallery-title'> Some of our work</h3>
+    <div className=''>
+        <h3 className='gallery-title'> Some of our work</h3>
+        <div className='select-menu-container'>
+            <SelectMenu setCategory={setCategory}  category={category} setPageNumber={setPageNumber}/>
+        </div>
             
-<div className='select-menu-container'>
-    <SelectMenu setCategory={setCategory}  category={category}/>
-</div>
-            
-            <div className ='gallery-grid-container'>
-                {loading && <Spinner/>}
+        <div className ='gallery-grid-container'>
+            {loading && <Spinner/>}
             {previousWork.map((item)=>(
                 <div key={item._id} className='gallery-grid__image-box'>
                 <div className='gallery-item'>
@@ -59,16 +50,14 @@ const OurWork = ()=>{
                 </div>
             </div>
             ))}
-
-
-           
-            </div>
- <div className='pagination'>
+        </div>
+        
+        <div className='pagination'>
             {pages.map((page, pageIndex)=>(
-               
-        <button key={pageIndex} className='pagination-button' onClick={()=>setPageNumber(pageIndex)}>{pageIndex +1}</button>
-              
-                
+            <button key={pageIndex} className='pagination-button' onClick={()=>setPageNumber(pageIndex)}>
+                {pageIndex +1}
+            </button>
+            
             ))} 
              </div>
         </div>

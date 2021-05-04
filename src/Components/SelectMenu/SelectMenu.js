@@ -6,6 +6,7 @@ const SelectMenu = (props) => {
 
     const changeHandler = (e)=>{
         props.setCategory(e.target.value)
+        props.setPageNumber(0)
     }
     
     
