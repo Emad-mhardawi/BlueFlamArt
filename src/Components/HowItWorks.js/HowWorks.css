@@ -9,7 +9,6 @@
     max-width: 1000px;
    /* background-color:gray;*/
     margin: 0 auto;
-    margin-bottom: 1000px;
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
     grid-template-rows: repeat(3, 300px);
