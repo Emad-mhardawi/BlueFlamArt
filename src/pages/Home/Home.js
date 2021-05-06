@@ -1,4 +1,5 @@
 import HowWorks from '../../Components/HowItWorks.js/HowWorks';
+import Testimonials from '../../Components/Testimonials/Testimonials';
 import GridLayout from '../../Containers/gridLayout/GridLayout';
 import HeroHeader from '../../Containers/HeroHeader/HeroHeader';
 import StorySection from '../../Containers/StorySection/StorySection';
@@ -12,6 +13,7 @@ const Home = ()=>{
             <StorySection/>
             <HowWorks/>
             <GridLayout/>
+            <Testimonials/>
         </div>
     )
 }
