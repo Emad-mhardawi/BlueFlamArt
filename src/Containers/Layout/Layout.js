@@ -4,6 +4,7 @@ import Nav from '../../Components/Nav/Nav';
 import SideDrawer from '../../Components/Nav/SideDrawer/SideDrawer';
 import './Layout.css';
 import Backdrop from '../../Components/Backdrop/Backdrop';
+import Footer from '../../Components/Footer/Footer';
 
 
 const Layout = (props)=>{
@@ -21,7 +22,7 @@ const Layout = (props)=>{
             </AnimatePresence>
             {menuOpen && <Backdrop closeMenu={sideBarToggle} />  }
             {props.children}
-          
+            <Footer/>
         </React.Fragment>
         
     )
