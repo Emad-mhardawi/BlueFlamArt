@@ -3,6 +3,7 @@ import Form from "../../Components/Form/Form";
 import Input from "../../Components/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../../Components/Spinner/Spinner";
+import OrdersTable from '../../Containers/ordersTable/orderTable';
 import { getUserDetails, updateUserProfile } from "../../redux-store/actions/userActions";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -35,14 +36,14 @@ const UserProfile = () => {
   let dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
-   
       dispatch(getUserDetails("profile"));
     
-  },[]);
+  },[dispatch]);
 
   const submit = (data) => {
     //// dispatch update profile
     dispatch(updateUserProfile(data))
+   
    
   };
 
@@ -51,7 +52,7 @@ const UserProfile = () => {
       <div className="userProfile-container">
         <div className="user-info">
           <Form className="user-info-form" onSubmit={handleSubmit(submit)}>
-                {updatedUser.success && <h3 className="success-message">profile updated</h3>} 
+                {updatedUser.success && <h3 className="success-message ">profile updated</h3>} 
               {updatedUser.error && <h3 className="error-message">{error}</h3>} 
             <h2>User Profile</h2>
             <Input
@@ -95,6 +96,7 @@ const UserProfile = () => {
         </div>
         <div className="user-order">
           <h2>Orders</h2>
+          <OrdersTable/>
         </div>
       </div>
     </div>

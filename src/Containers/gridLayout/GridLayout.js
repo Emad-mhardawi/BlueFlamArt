@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import "./GridLayout.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+    duration: 2000,
+    })
 
 const GridLayout = (props) => {
   return (
-    <div className='grid-layout'>
+    <div className='grid-layout' data-aos="fade-right" >
        <div className='grid-unit grid-unit-1'>
            <div className='grid-image-box'>
                <img className='grid-image' src='https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/198211447/original/7db576021e56c93f47a94ee0b6389ca47d36095b/you-a-realistic-digital-portrait.jpg'/>
