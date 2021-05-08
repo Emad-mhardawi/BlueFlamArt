@@ -1,3 +1,4 @@
+import Footer from '../../Components/Footer/Footer';
 import HowWorks from '../../Components/HowItWorks.js/HowWorks';
 import Testimonials from '../../Components/Testimonials/Testimonials';
 import GridLayout from '../../Containers/gridLayout/GridLayout';
@@ -14,6 +15,7 @@ const Home = ()=>{
             <HowWorks/>
             <GridLayout/>
             <Testimonials/>
+            <Footer/>
         </div>
     )
 }
