@@ -36,7 +36,7 @@ const logoutHandler = ()=>{
                 <FaUser />
                 {authDropOpen &&(
                 <ul className='nav-dropdown-list'>
-                    {userInfo.userInfo? <div><Link to='/profile'>Profile</Link> <button onClick={logoutHandler}>logout</button></div> 
+                    {userInfo.userInfo? <div> {userInfo.userInfo.isAdmin ? <Link to='/admin/dashboard'>Dashboard</Link>: <Link to='/profile'>Profile</Link> } <button onClick={logoutHandler}>logout</button></div> 
                     :
                      <div>
                     <NavLink exact to='/login' className='nav-dropdown-link'> Login</NavLink>

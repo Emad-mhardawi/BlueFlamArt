@@ -4,3 +4,20 @@
     height: 100%;
     border-color: gray;
 }
+
+.error-message {
+    font-family: roboto;
+    background-color: rgba(255, 0, 0, 0.26);
+    padding: 15px;
+    display: block;
+    text-align: center;
+  }
+
+  .success-message{
+    font-family: roboto;
+    background-color: rgba(0, 128, 0, 0.52);
+    padding: 15px;
+    display: block;
+    text-align: center;
+    color: white;
+  }
