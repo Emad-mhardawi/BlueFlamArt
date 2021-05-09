@@ -11,7 +11,7 @@ const NavBotton = (props)=>{
         <ul className='nav-bottom-links'>
         <li><NavLink exact to='/' className='nav-bottom-links__link'> Home</NavLink></li>
         <li><NavLink to='/about' className='nav-bottom-links__link'> About</NavLink></li>
-        <li><NavLink to='/about' className='nav-bottom-links__link'> Contact</NavLink></li>
+        <li><NavLink to='/contact' className='nav-bottom-links__link'> Contact</NavLink></li>
         <li><NavLink to='/gallery' className='nav-bottom-links__link'> Work</NavLink></li>
         </ul>
     </div>
