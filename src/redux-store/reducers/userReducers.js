@@ -80,3 +80,21 @@ export const userUpdateProfileReducer = (state ={}, action)=>{
     }
 
 }
+
+
+export const userOrdersReducer = (state ={orders:[]}, action)=>{
+    switch(action.type){
+        case actionTypes.USER_ORDERS_REQUEST:
+            return{ loading: true }
+
+        case actionTypes.USER_ORDERS_SUCCESS:
+            return{  loading: false,  orders: action.payload}
+
+        case actionTypes.USER_ORDERS_FAIL:
+            return{ loading: false, error: action.payload }
+
+        default: return state;
+
+    }
+
+}

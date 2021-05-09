@@ -1,0 +1,56 @@
+.orders-table{
+    border-collapse: collapse;
+    
+    border: 1px solid rgba(128, 128, 128, 0.274);
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+thead{
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.185) ;
+}
+
+th{
+    padding: 16px 16px ;
+    font-size: 16px;
+    
+}
+
+td{
+  padding: 16px 16px;
+}
+
+
+.status-paid{
+    border-radius: 3px;
+    background-color: rgb(41, 209, 41);
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+}
+
+.status-unpaid {
+    border-radius: 3px;
+    background-color: rgba(253, 0, 0, 0.609);
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: rgba(128, 128, 128, 0.116);
+}
+
+.td-order_id{
+   max-width: 100px;
+  
+text-overflow: clip;
+overflow: scroll;
+}
+
+
+::-webkit-scrollbar{
+   display: none;
+
+}

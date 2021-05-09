@@ -4,7 +4,7 @@ import Input from "../../Components/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../../Components/Spinner/Spinner";
 import OrdersTable from '../../Containers/ordersTable/orderTable';
-import { getUserDetails, updateUserProfile } from "../../redux-store/actions/userActions";
+import { getUserDetails, updateUserProfile, getUserOrders } from "../../redux-store/actions/userActions";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../Components/Button/Button";
@@ -18,7 +18,10 @@ const UserProfile = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   const updatedUser = useSelector((state) => state.userUpdateProfile);
+  const userOrders = useSelector((state) => state.userOrders);
+  const {orders} = userOrders
   
+  console.log(orders)
  
   
   // functions that come with react form hook
@@ -37,6 +40,7 @@ const UserProfile = () => {
   const history = useHistory();
   useEffect(() => {
       dispatch(getUserDetails("profile"));
+      dispatch(getUserOrders());
     
   },[dispatch]);
 
@@ -95,8 +99,8 @@ const UserProfile = () => {
           </Form>
         </div>
         <div className="user-order">
-          <h2>Orders</h2>
-          <OrdersTable/>
+          <h2>My Orders</h2>
+          <OrdersTable orders={orders}/>
         </div>
       </div>
     </div>
