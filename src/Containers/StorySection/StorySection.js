@@ -1,15 +1,11 @@
 import React from 'react';
 import './StorySection.css';
 import Button from '../../Components/Button/Button';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init({
-    duration: 1000,
-    })
+
 
 const StorySection = (props)=>{
     return(
-       <section className='story-section' data-aos="fade-up">
+       <section className='story-section' >
            <div className='story-section-title'>A little about who we are, and what we do ?</div>
            <div className='story-section-hero-image'></div>
            <div className='story-section-des'>

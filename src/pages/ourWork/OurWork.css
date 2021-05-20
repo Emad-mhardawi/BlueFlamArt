@@ -120,3 +120,24 @@
 .pagination-button:hover{
     background-color: #f75691;
 }
+
+.gallery-header{
+    height: 25vh;
+    width: 100%;
+    position: relative;
+    background-image: url("https://brooklynrail-web.imgix.net/article_image/image/23299/jen-lure-1.jpg?w=1020&q=80&fit=max");
+    background-position: center;
+    background-size: cover;
+}
+
+.gallery-header h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-family: monospace;
+    font-weight: 700;
+    color: white;
+  }
+  

@@ -11,7 +11,7 @@ AOS.init({
 
 const HowWorks = ()=>{
     return(
-        <div className='order-steps-container' data-aos="fade-left">
+        <div className='order-steps-container' >
             <h2>How It Works</h2>
        <div className='order-steps'>
            <div className='step1-left'>

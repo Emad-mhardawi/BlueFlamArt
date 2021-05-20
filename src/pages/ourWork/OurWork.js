@@ -31,7 +31,10 @@ const OurWork = ()=>{
 
     return(
     <div className='gallery'>
-        <h3 className='gallery-title'> Some of our work</h3>
+        <div className="gallery-header">
+        <h3>Gallery</h3>
+      </div>
+        
         <div className='select-menu-container'>
             <SelectMenu setCategory={setCategory}  category={category} setPageNumber={setPageNumber}/>
         </div>

@@ -41,11 +41,13 @@ const OverView = ()=>{
 
     
 return(
-    <div>
-    <h3>portraitName:  {portraitName}</h3>
-    <h3>portraitSize:  {portraitSize}</h3>
-    <h3>fullBody:  {fullBody}</h3>
-    <h3>commentToArtist:  {commentToArtist}</h3>
+    <div className='over-view'>
+        <h2> your are going to order: {portraitStyle} </h2>
+    <p>portraitName:  {portraitName}</p>
+    <p>portraitSize:  {portraitSize}</p>
+    <p>fullBody:  {fullBody}</p>
+    <p>commentToArtist:  {commentToArtist}</p>
+    <p>commentToArtist:  {portraitStyle}</p>
     <Button clicked ={checkout} className ='checkout-button'>check out</Button>
    
    

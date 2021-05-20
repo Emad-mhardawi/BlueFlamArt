@@ -7,6 +7,7 @@ import {authInputsValidation} from "../../utils/validate";
 import { registerUser } from "../../redux-store/actions/userActions";
 import Form from "../../Components/Form/Form";
 import Button from "../../Components/Button/Button";
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
 
@@ -86,7 +87,7 @@ const Signup = () => {
 
         <div className="create-acount-link">
           <p>
-            Already have an account? <a href="/home">Login</a>
+            Already have an account? <Link to ='/login'>Login</Link>
           </p>
         </div>
       </Form>
