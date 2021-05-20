@@ -1,10 +1,13 @@
 import './Dashboard.css';
+import DashboardNav from './DashboardNav';
 
 
 const Dashboard = ()=>{
     return(
         <div className='dashboard'>
-          this is dashdoard
+            <DashboardNav>
+                
+            </DashboardNav>
           </div>
     )
 }
