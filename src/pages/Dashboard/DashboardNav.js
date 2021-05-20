@@ -21,6 +21,7 @@ import StarBorder from "@material-ui/icons/StarBorder";
 import PeopleIcon from '@material-ui/icons/People';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import HomeIcon from '@material-ui/icons/Home';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
 const drawerWidth = 240;
 
@@ -111,11 +112,11 @@ function DashboardNav(props) {
         </Collapse>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
+            <ListItem button className={classes.nested} onClick={()=>history.push('/admin/dashboard/UsersList')}>
               <ListItemIcon>
-                <StarBorder />
+                <PeopleAltIcon />
               </ListItemIcon>
-              <ListItemText primary="Starred" />
+              <ListItemText primary="Users List" />
             </ListItem>
           </List>
         </Collapse>
@@ -178,7 +179,6 @@ function DashboardNav(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>dsd</Typography>
         {props.children}
       </main>
     </div>
