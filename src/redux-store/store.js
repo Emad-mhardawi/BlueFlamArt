@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {userLoginReducer, userRegisterReducer,userDetailsReducer,  userUpdateProfileReducer, userOrdersReducer} from './reducers/userReducers';
 import {collectOrderDataReducer } from './reducers/orderReducer'
+import {adminGetUsersReducer, adminDeleteUserReducer } from './reducers/adminReducer'
 
 const reducer = combineReducers({
 userLogin: userLoginReducer,
@@ -10,7 +11,9 @@ userRegister: userRegisterReducer,
 collectOrderData: collectOrderDataReducer,
 userDetails:userDetailsReducer,
 userUpdateProfile: userUpdateProfileReducer,
-userOrders:userOrdersReducer 
+userOrders:userOrdersReducer,
+getAllUsers: adminGetUsersReducer,
+adminDeleteUser: adminDeleteUserReducer
 });
 
 
