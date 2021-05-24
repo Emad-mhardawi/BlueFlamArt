@@ -1,5 +1,5 @@
 import {ADMIN_GET_USERS_REQUEST, ADMIN_GET_USERS_SUCCESS, ADMIN_GET_USERS_FAIL, ADMIN_DELETE_USER_REQUEST, ADMIN_DELETE_USER_SUCCESS, ADMIN_DELETE_USER_FAIL} from "./actionsTypes";
-  import axios from "axios";
+import axiosInstance from '../../helpers/axios';
   
   
   
@@ -19,8 +19,8 @@ import {ADMIN_GET_USERS_REQUEST, ADMIN_GET_USERS_SUCCESS, ADMIN_GET_USERS_FAIL, 
         },
       };
   
-      const { data } = await axios.get(
-        `http://localhost:5000/admin/users`,
+      const { data } = await axiosInstance.get(
+        `/admin/users`,
         config
       );
   
@@ -56,8 +56,8 @@ import {ADMIN_GET_USERS_REQUEST, ADMIN_GET_USERS_SUCCESS, ADMIN_GET_USERS_FAIL, 
         },
       };
   
-      const { data } = await axios.delete(
-        `http://localhost:5000/admin/deleteUser?userId=${userId}`,
+      const { data } = await axiosInstance.delete(
+        `/admin/deleteUser?userId=${userId}`,
         config
       );
   

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { emailValidation } from "../../utils/validate";
 import "./ForgotPassword.css";
 import Button from "../../Components/Button/Button";
-import axios from "axios";
+import axiosInstance from '../../helpers/axios'
 import { useState } from "react";
 
 const ForgotPassword = () => {
@@ -20,8 +20,8 @@ const ForgotPassword = () => {
   const submit = async (data) => {
     const email = data.email;
     try {
-      const response = await axios.post(
-        "http://localhost:5000/forgotPassword",
+      const response = await axiosInstance.post(
+        "/forgotPassword",
         { email: email }
       );
       const message = await response.data.message;

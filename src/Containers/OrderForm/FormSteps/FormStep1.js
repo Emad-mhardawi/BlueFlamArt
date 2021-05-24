@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from '../../../helpers/axios'
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Button from "../../../Components/Button/Button";
@@ -39,7 +39,7 @@ useEffect(()=>{
 
 /// fetch portraits from server and save them in state
 const getPortraits = async ()=>{
-    const response = await axios.get('http://localhost:5000/portraits');
+    const response = await axiosInstance.get('/portraits');
     const portraits = await response.data;
     setPortraits({
         loading: false,

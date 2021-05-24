@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from '../../../helpers/axios'
 import { useSelector } from "react-redux";
 import Button from "../../../Components/Button/Button";
 import { loadStripe } from "@stripe/stripe-js";
@@ -22,9 +22,9 @@ const OverView = () => {
     formData.append("fullBody", true);
     formData.append("commentsToArtist", commentToArtist);
 
-    const checkoutSession = await axios({
+    const checkoutSession = await axiosInstance({
       method: "POST",
-      url: "http://localhost:5000/create-checkout-session",
+      url: "/create-checkout-session",
       data: formData,
       headers: { token: "Bearer " + userInfo.token },
     });

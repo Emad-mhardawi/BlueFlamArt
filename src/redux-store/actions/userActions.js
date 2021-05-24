@@ -16,7 +16,7 @@ import {
   USER_ORDERS_SUCCESS,
   USER_ORDERS_FAIL,
 } from "./actionsTypes";
-import axios from "axios";
+import axiosInstance from '../../helpers/axios'
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -30,8 +30,8 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
-      "http://localhost:5000/login",
+    const { data } = await axiosInstance.post(
+      "/login",
       { email, password },
       config
     );
@@ -73,8 +73,8 @@ export const registerUser =
         },
       };
 
-      const { data } = await axios.post(
-        "http://localhost:5000/register",
+      const { data } = await axiosInstance.post(
+        "/register",
         { username, email, password, confirmedPassword },
         config
       );
@@ -110,7 +110,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`http://localhost:5000/${id}`, config);
+    const { data } = await axiosInstance.get(`/${id}`, config);
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
@@ -143,8 +143,8 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(
-      `http://localhost:5000/profile`,
+    const { data } = await axiosInstance.put(
+      `/profile`,
       user,
       config
     );
@@ -180,8 +180,8 @@ export const getUserOrders = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(
-      `http://localhost:5000/user/orders`,
+    const { data } = await axiosInstance.get(
+      `/user/orders`,
       config
     );
 

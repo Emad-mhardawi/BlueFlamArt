@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import SelectMenu from "../../Components/SelectMenu/SelectMenu";
 import Spinner from "../../Components/Spinner/Spinner";
+import axiosInstance from '../../helpers/axios';
 import "./OurWork.css";
 
 const OurWork = () => {
@@ -19,8 +19,8 @@ const OurWork = () => {
 
   const getPreviousWork = async () => {
     setLoading(true);
-    const response = await axios.get(
-      `http://localhost:5000/previous-work?page=${pageNumber}&category=${category}`
+    const response = await axiosInstance.get(
+      `/previous-work?page=${pageNumber}&category=${category}`
     );
     const previousWork = await response.data;
     setPreviousWork(previousWork.previousWork);

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { passwordsValidation } from "../../utils/validate";
 import "./ResetPassword.css";
 import Button from "../../Components/Button/Button";
-import axios from "axios";
+import axiosInstance from '../../helpers/axios'
 import { useState } from "react";
 import qs from 'qs';
 
@@ -25,8 +25,8 @@ const ResetPassword = (props) => {
    const resetTokenFromQuery = qs.parse(props.location.search, { ignoreQueryPrefix: true }).resetToken
    const email = data.email;
     try {
-      const response = await axios.post(
-        `http://localhost:5000/resetPassword?resetToken=${resetTokenFromQuery}`,
+      const response = await axiosInstance.post(
+        `/resetPassword?resetToken=${resetTokenFromQuery}`,
         {    password: data.password,
             confirmedPassword: data.confirmedPassword
          }
