@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import AdminProtectedRoute from "./protectedRoutes/AdminRoute";
 import UserProtectedRoute from "./protectedRoutes/UserProtectedRoute";
 import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
 import Login from "./pages/Login/Login";
 import Layout from "./Containers/Layout/Layout";
 import Signup from "./pages/Signup/Signup";
@@ -22,7 +21,6 @@ const App = () => {
       <AdminProtectedRoute path='/admin/dashboard' component={Dashboard}/>
         <Layout>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/gallery" component={OurWork} />
           <Route path="/login" component={Login} />

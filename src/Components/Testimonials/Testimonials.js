@@ -8,7 +8,9 @@ const Testimonials = () => {
         <div className="testimonials-card">
           <div className="testimonials-card-header">
             <div className="testimonials-card-image">
-              <img src="https://pbs.twimg.com/profile_images/980145664712740864/aNWjR7MB_400x400.jpg" />
+              <img src="https://pbs.twimg.com/profile_images/980145664712740864/aNWjR7MB_400x400.jpg" 
+              alt='avatar'
+              />
             </div>
             <h3>I’m recommending you to all my friends</h3>
           </div>
@@ -23,7 +25,9 @@ const Testimonials = () => {
         <div className="testimonials-card">
           <div className="testimonials-card-header">
             <div className="testimonials-card-image">
-              <img src="https://imgix.bustle.com/rehost/2016/9/13/98c6b94f-014a-467a-80b0-0167b9796329.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress" />
+              <img src="https://imgix.bustle.com/rehost/2016/9/13/98c6b94f-014a-467a-80b0-0167b9796329.jpg?w=800&fit=crop&crop=faces&auto=format%2Ccompress"
+              alt='avatar'
+              />
             </div>
             <h3>Thank you for your creative paintings!</h3>
           </div>
@@ -39,7 +43,9 @@ const Testimonials = () => {
         <div className="testimonials-card">
           <div className="testimonials-card-header">
             <div className="testimonials-card-image">
-              <img src="https://www.machinecurve.com/wp-content/uploads/2019/07/thispersondoesnotexist-1.jpg" />
+              <img src="https://www.machinecurve.com/wp-content/uploads/2019/07/thispersondoesnotexist-1.jpg"
+              alt='avatar' 
+              />
             </div>
             <h3>You create amazing and captivating paintings!</h3>
           </div>

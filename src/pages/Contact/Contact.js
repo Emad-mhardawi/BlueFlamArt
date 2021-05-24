@@ -1,11 +1,6 @@
 import Form from "../../Components/Form/Form";
 import Input from "../../Components/Input/Input";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaSnapchat,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagramSquare, FaSnapchat } from "react-icons/fa";
 import "./Contact.css";
 import { Divider } from "@material-ui/core";
 

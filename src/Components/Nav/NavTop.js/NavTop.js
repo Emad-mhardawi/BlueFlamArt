@@ -8,21 +8,19 @@ import {logout} from '../../../redux-store/actions/userActions';
 
 
 const NavTop = (props)=>{
-    
-const userLogin = useSelector((state)=>state.userLogin);
-const userInfo = userLogin;
+	const userLogin = useSelector((state)=>state.userLogin);
+	const userInfo = userLogin;
+	const dispatch = useDispatch()
 
-console.log(userInfo.userInfo)
-const dispatch = useDispatch()
-
-const logoutHandler = ()=>{
+	const logoutHandler = ()=>{
     dispatch(logout())
 }
 
-    const [authDropOpen, setAuthDropOpen] = useState(false)
-    return(
-        <div className='nav-top'>
-        <div className='nav-contact'>
+	const [authDropOpen, setAuthDropOpen] = useState(false)
+
+	return(
+		<div className='nav-top'>
+      <div className='nav-contact'>
         <p className='nav-contact-phonNumber'>076-167-xxx</p>
         <FaPhoneAlt className='phonNumber-icon'/>
         </div>
@@ -30,33 +28,27 @@ const logoutHandler = ()=>{
 
 
         <div className='nav-top__right'>
-
-
-        <div onClick={()=>setAuthDropOpen(!authDropOpen)} className="nav-top__right-dropdown">
-                <FaUser />
+					<div onClick={()=>setAuthDropOpen(!authDropOpen)} className="nav-top__right-dropdown">
+						<FaUser />
                 {authDropOpen &&(
                 <ul className='nav-dropdown-list'>
-                    {userInfo.userInfo? <div> {userInfo.userInfo.isAdmin ? <Link to='/admin/dashboard'>Dashboard</Link>: <Link to='/profile'>Profile</Link> } <button onClick={logoutHandler}>logout</button></div> 
+                    {userInfo.userInfo? 
+										<div>
+											{userInfo.userInfo.isAdmin ?<Link to='/admin/dashboard'>Dashboard</Link>: 
+											<Link to='/profile'>Profile</Link> } 
+											<button onClick={logoutHandler}>logout</button>
+										</div> 
                     :
-                     <div>
+                    <div>
                     <NavLink exact to='/login' className='nav-dropdown-link'> Login</NavLink>
                     <NavLink to='/register' className='nav-dropdown-link'> Signup</NavLink>
                     </div>
                     }
-                   
-                   
-                    
-                    
-                </ul>
+								</ul>
                ) }
-                
-             </div>
-
-
-            <Link to='/order' className='nav-top__right-order'>order now</Link>
-
-            
-        </div>
+          </div>
+						 <Link to='/order' className='nav-top__right-order'>order now</Link>
+				</div>
     </div>
         
     )

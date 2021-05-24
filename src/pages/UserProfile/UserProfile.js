@@ -2,10 +2,9 @@ import "./UserProfile.css";
 import Form from "../../Components/Form/Form";
 import Input from "../../Components/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
-import Spinner from "../../Components/Spinner/Spinner";
 import OrdersTable from '../../Containers/ordersTable/orderTable';
 import { getUserDetails, updateUserProfile, getUserOrders } from "../../redux-store/actions/userActions";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import { useForm } from "react-hook-form";
@@ -14,7 +13,7 @@ import { authInputsValidation } from "../../utils/validate";
 
 const UserProfile = () => {
   const userDetails = useSelector((state) => state.userDetails);
-  const { loading, error, user } = userDetails;
+  const {  error, user } = userDetails;
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   const updatedUser = useSelector((state) => state.userUpdateProfile);

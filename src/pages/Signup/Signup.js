@@ -8,7 +8,7 @@ import {authInputsValidation} from "../../utils/validate";
 import { registerUser } from "../../redux-store/actions/userActions";
 import Form from "../../Components/Form/Form";
 import Button from "../../Components/Button/Button";
-import { Link, Redirect, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 const Signup = () => {
 
@@ -37,10 +37,10 @@ const Signup = () => {
   
   const history = useHistory();
   useEffect(()=>{
-    if(signup == true){
+    if(signup === true){
       history.push('/login')
     }
-  },[userInfo, history])
+  },[userInfo, history, signup])
 
   return (
     <div className="signup">
