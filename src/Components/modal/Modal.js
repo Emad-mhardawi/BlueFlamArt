@@ -1,9 +1,10 @@
+import { PinDropSharp } from '@material-ui/icons';
 import './Modal.css'
 
-const Modal =()=>{
+const Modal =(props)=>{
 return(
-    <div>
-
+    <div className='modal'>
+        {props.children}
     </div>
 )
 
