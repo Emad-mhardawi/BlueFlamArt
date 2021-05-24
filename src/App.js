@@ -13,6 +13,7 @@ import Order from "./pages/Order/order";
 import OurWork from "./pages/ourWork/OurWork";
 import Contact from "./pages/Contact/Contact";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Signup} />
           <Route path="/forgotPassword" component={ForgotPassword} />
+          <Route path="/resetPassword" component={ResetPassword} />
           <UserProtectedRoute path="/order" component={Order} />
           <UserProtectedRoute path="/profile" component={UserProfile} />
         </Layout>

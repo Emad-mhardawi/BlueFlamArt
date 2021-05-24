@@ -34,3 +34,8 @@ export const emailValidation = yup.object().shape({
     email: yup.string().email().required(),
 })
 
+export const passwordsValidation = yup.object().shape({
+    password: yup.string().min(6).required(),
+    confirmedPassword: yup.string().oneOf([yup.ref('password'), null], 'passwords must match'),
+})
+
