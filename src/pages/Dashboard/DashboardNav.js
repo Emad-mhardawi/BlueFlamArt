@@ -111,7 +111,7 @@ function DashboardNav(props) {
         </Collapse>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested} onClick={()=>history.push('/admin/dashboard/UsersList')}>
+            <ListItem button className={classes.nested} onClick={()=>history.push('/admin/dashboard')}>
               <ListItemIcon>
                 <PeopleAltIcon />
               </ListItemIcon>

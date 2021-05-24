@@ -9,8 +9,8 @@ const Dashboard = ()=>{
         <div className='dashboard'>
         <Switch>
             <DashboardNav>
-            <Route path="/admin/dashboard/addUser" component={AdminAddUser} />
-            <Route path="/admin/dashboard/usersList" component={AdminUsersList} />
+            <Route exact path="/admin/dashboard/addUser" component={AdminAddUser} />
+            <Route exact path="/admin/dashboard" component={AdminUsersList} />
             </DashboardNav>
         </Switch>
           </div>

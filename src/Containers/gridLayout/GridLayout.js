@@ -12,7 +12,7 @@ const GridLayout = (props) => {
             alt="Realistic portrait"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Realistic</p>
           </div>
@@ -27,7 +27,7 @@ const GridLayout = (props) => {
             alt="Manga Style portrait"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Manga Style</p>
           </div>
@@ -42,7 +42,7 @@ const GridLayout = (props) => {
             alt="Digital Oil portrait"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Digital Oil</p>
           </div>
@@ -57,7 +57,7 @@ const GridLayout = (props) => {
             alt="Line Art"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Line Art</p>
           </div>
@@ -72,7 +72,7 @@ const GridLayout = (props) => {
             alt="Atmospheric Illustrations"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Atmospheric Illustrations</p>
           </div>
@@ -87,7 +87,7 @@ const GridLayout = (props) => {
             alt="Character Design"
           />
         </div>
-        <Link className="grid-layout-link" to="/ourstyles">
+        <Link className="grid-layout-link" to="/#">
           <div className="grid-image-overlay">
             <p className="grid-unit-title">Character Design</p>
           </div>

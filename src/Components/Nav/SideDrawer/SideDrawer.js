@@ -13,15 +13,11 @@ const SideDrawer = (props) => {
         </motion.li>
         
         <motion.li variants={linksVariants} className="sideDrawer-list-item">
-            <NavLink to="/about" className="sideDrawer-list-link" onClick={props.closeMenu} >About </NavLink>
-        </motion.li>
-
-        <motion.li variants={linksVariants} className="sideDrawer-list-item">
             <NavLink to="/contact" className="sideDrawer-list-link" onClick={props.closeMenu} >Contact </NavLink>
         </motion.li>
 
         <motion.li variants={linksVariants} className="sideDrawer-list-item">
-            <NavLink to="/work" className="sideDrawer-list-link" onClick={props.closeMenu} > Work</NavLink>
+            <NavLink to="/gallery" className="sideDrawer-list-link" onClick={props.closeMenu} > Gallery</NavLink>
         </motion.li>
 
     </motion.ul>
