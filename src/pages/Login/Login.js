@@ -9,6 +9,7 @@ import "./Login.css";
 import { useHistory } from "react-router";
 import Button from "../../Components/Button/Button";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -64,7 +65,7 @@ const Login = () => {
           errormessage={errors.password?.message}
           className={errors.password && "error"}
         />
-        <p className="forgot-password">forgot my password</p>
+         <Link to='/forgotPassword' className="forgot-password">forgot my password</Link>
         <Button type="submit" className="login-button">
           LOGIN
         </Button>
