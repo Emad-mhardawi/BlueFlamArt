@@ -29,3 +29,8 @@ export const step3Validation = yup.object().shape({
     image: yup.mixed().required()   
 })
 
+
+export const emailValidation = yup.object().shape({
+    email: yup.string().email().required(),
+})
+
