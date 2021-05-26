@@ -3,8 +3,37 @@ import Input from "../../Components/Input/Input";
 import { FaFacebook, FaInstagramSquare, FaSnapchat } from "react-icons/fa";
 import "./Contact.css";
 import { Divider } from "@material-ui/core";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import {contactFormValidation} from "../../utils/validate";
+import axiosInstance from '../../helpers/axios';
+import { useState } from "react";
+import Modal from '../../Components/modal/Modal'
+import BackDrop from '../../Components/Backdrop/Backdrop'
+
+
 
 const Contact = () => {
+
+// functions that come with react form hook
+  // to handle input fields and form submission
+  const {register,handleSubmit,formState: { errors }} = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(contactFormValidation),
+  });
+
+  const [isMessageSend, setIsMessageSend] = useState('')
+ 
+  const submit = async (data) => {
+    setIsMessageSend('')
+    const response = await axiosInstance.post('/contact', data)
+    const message = await response.data;
+    setIsMessageSend(message)
+    console.log(isMessageSend)
+    
+  };
+
+
   return (
     <div className="Contact">
       <div className="contact-header">
@@ -44,17 +73,43 @@ const Contact = () => {
           than happy to answer your questions.
         </p>
 
-        <Form className="contact-form">
-          <Input inputtype="text" placeholder="Your Name" />
+        <Form className="contact-form" onSubmit={handleSubmit(submit)}>
+          <Input inputtype="text"
+          placeholder="Your Name"
+          name='username'
+          {...register("username")}
+          errormessage={errors.username?.message}
+          className={errors.username && "error"}
+          />
 
-          <Input inputtype="text" placeholder="E-mail" />
+          <Input inputtype="text"
+            placeholder="E-mail"
+            name='email'
+          {...register("email")}
+          errormessage={errors.email?.message}
+          className={errors.email && "error"}
+          />
           <div className="text-area">
-            <Input inputtype="textarea" placeholder="Your Message" rows="9" />
+            <Input inputtype="textarea"
+            placeholder="Your Message"
+            rows="9"
+            name='message'
+          {...register("message")}
+          errormessage={errors.message?.message}
+          className={errors.message && "error"}
+            />
           </div>
 
-          <button>Send message</button>
+          <button type='submit'>Send message</button>
         </Form>
       </div>
+      {isMessageSend &&
+        <BackDrop>
+          <Modal clicked={()=>setIsMessageSend('')} >
+            {isMessageSend}
+          </Modal>
+       </BackDrop>}
+      
     </div>
   );
 };

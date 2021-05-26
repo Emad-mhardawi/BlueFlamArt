@@ -39,3 +39,9 @@ export const passwordsValidation = yup.object().shape({
     confirmedPassword: yup.string().oneOf([yup.ref('password'), null], 'passwords must match'),
 })
 
+
+export const contactFormValidation = yup.object().shape({
+    username: yup.string(),
+    email: yup.string().email().required(),
+    message: yup.string().required("you can't send an empty message"),
+})
