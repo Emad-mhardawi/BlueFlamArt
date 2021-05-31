@@ -23,7 +23,6 @@ const ResetPassword = (props) => {
    console.log(data)
 
    const resetTokenFromQuery = qs.parse(props.location.search, { ignoreQueryPrefix: true }).resetToken
-   const email = data.email;
     try {
       const response = await axiosInstance.post(
         `/resetPassword?resetToken=${resetTokenFromQuery}`,

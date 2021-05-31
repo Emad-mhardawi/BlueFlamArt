@@ -40,7 +40,7 @@ const Signup = () => {
     if(signup === true){
       history.push('/login')
     }
-  },[userInfo, history, setSignUp])
+  },[userInfo, history, setSignUp, signup])
 
   return (
     <div className="signup">

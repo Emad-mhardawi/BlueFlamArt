@@ -37,12 +37,12 @@ const AdminUsersList = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const dispatch = useDispatch();
   const getUsersList = useSelector((state) => state.getAllUsers);
-  let { loading, error, users } = getUsersList;
+  let { loading, users } = getUsersList;
   if (!users) {
     users = [];
   }
 
-  const deletedUser = useSelector((state) => state.adminDeleteUser);
+  
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -77,7 +77,7 @@ const AdminUsersList = () => {
               </TableCell>
             </TableRow>
           </TableHead>
-          {loading == true && <Spinner />}
+          {loading === true && <Spinner />}
           <TableBody>
             {(rowsPerPage > 0
               ? users.slice(

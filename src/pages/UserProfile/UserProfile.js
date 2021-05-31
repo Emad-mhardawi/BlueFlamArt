@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import OrdersTable from '../../Containers/ordersTable/orderTable';
 import { getUserDetails, updateUserProfile, getUserOrders } from "../../redux-store/actions/userActions";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,13 +13,10 @@ import { authInputsValidation } from "../../utils/validate";
 const UserProfile = () => {
   const userDetails = useSelector((state) => state.userDetails);
   const {  error, user } = userDetails;
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const updatedUser = useSelector((state) => state.userUpdateProfile);
   const userOrders = useSelector((state) => state.userOrders);
   const {orders} = userOrders
   
-  console.log(orders)
  
   
   // functions that come with react form hook
@@ -36,7 +32,6 @@ const UserProfile = () => {
   });
 
   let dispatch = useDispatch();
-  const history = useHistory();
   useEffect(() => {
       dispatch(getUserDetails("profile"));
       dispatch(getUserOrders());
