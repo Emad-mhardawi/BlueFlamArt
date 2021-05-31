@@ -29,7 +29,7 @@ const Signup = () => {
   /// to redux and dispatch an action to handle the login request.
   const submit = (data) => {
     dispatch(registerUser(data.username, data.email, data.password, data.confirmedPassword));
-    if(userInfo){
+    if(!error){
       setSignUp(true)
     }
   };

@@ -25,7 +25,7 @@ export const userLoginReducer = (state = initialState, action)=>{
 }
 
 
-export const userRegisterReducer = (state = {}, action)=>{
+export const userRegisterReducer = (state = {userInfo:{username:''}}, action)=>{
     switch(action.type){
         case actionTypes.USER_REGISTER_REQUEST:
             return{ loading: true }
