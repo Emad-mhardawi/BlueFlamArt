@@ -8,14 +8,14 @@ import {authInputsValidation} from "../../utils/validate";
 import { registerUser } from "../../redux-store/actions/userActions";
 import Form from "../../Components/Form/Form";
 import Button from "../../Components/Button/Button";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 
 const Signup = () => {
 
   /// bring register request result from redux store
   const dispatch = useDispatch();
   const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
+  let { loading, error, userInfo } = userRegister;
   const [signup , setSignUp] = useState(false)
 
   // functions that come with react form hook
@@ -27,20 +27,18 @@ const Signup = () => {
 
   /// when form is submitted inputs values will be sent
   /// to redux and dispatch an action to handle the login request.
-  const submit = (data) => {
-    dispatch(registerUser(data.username, data.email, data.password, data.confirmedPassword));
-    if(!error){
-      setSignUp(true)
-    }
+  
+  const submit = async (data) => {
+    await dispatch(registerUser(data.username, data.email, data.password, data.confirmedPassword));
   };
 
-  
-  const history = useHistory();
-  useEffect(()=>{
-    if(signup === true){
-      history.push('/login')
-    }
-  },[userInfo, history, setSignUp, signup])
+
+const history = useHistory();
+useEffect(()=>{
+  userInfo && history.push('/login')
+},[userInfo, history])
+ 
+ 
 
   return (
     <div className="signup">
@@ -103,6 +101,7 @@ const Signup = () => {
           </p>
         </div>
       </Form>
+     
     </div>
   );
 };

@@ -72,7 +72,7 @@ const Login = () => {
         <hr className="form-divider" />
         <div className="create-acount-link">
           <p>
-            Don' have an account? <a href="/home"> Create an account</a>
+            Don' have an account? <Link to="/register"> Create an account</Link>
           </p>
         </div>
       </Form>
